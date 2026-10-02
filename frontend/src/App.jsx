@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import TitleNotification from "./features/Title-Notifications/TitleNotification";
 
 export default function App() {
   return (
-    <>App</>
-  )
+    <>
+      <TitleNotification />
+    </>
+  );
 }
