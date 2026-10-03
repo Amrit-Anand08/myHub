@@ -1,5 +1,5 @@
 import React from "react";
-import TitleNotification from "./features/Title-Notifications/TitleNotification";
+import TitleNotification from "./features/01_Title-Notifications/TitleNotification";
 
 export default function App() {
   return (
