@@ -1,0 +1,320 @@
+/* ========================================
+   TOAST POSITION CONTAINER
+======================================== */
+
+.toastContainer {
+  position: fixed;
+
+  z-index: 9999;
+
+  display: flex;
+
+  width: 100%;
+
+  padding: 20px;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   POSITIONS
+======================================== */
+
+.toastContainer.top-right {
+  top: 0;
+  right: 0;
+
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.toastContainer.top-left {
+  top: 0;
+  left: 0;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.toastContainer.top-center {
+  top: 0;
+  left: 0;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.toastContainer.bottom-right {
+  right: 0;
+  bottom: 0;
+
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.toastContainer.bottom-left {
+  left: 0;
+  bottom: 0;
+
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.toastContainer.bottom-center {
+  left: 0;
+  bottom: 0;
+
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* ========================================
+   TOAST
+======================================== */
+
+.myToast {
+  --toast-color: #3b82f6;
+
+  position: relative;
+
+  width: 360px;
+
+  min-height: 80px;
+
+  padding: 16px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  border-left: 5px solid var(--toast-color);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  overflow: hidden;
+
+  pointer-events: auto;
+
+  font-family: Arial, sans-serif;
+}
+
+/* ========================================
+   TYPES
+======================================== */
+
+.myToast.success {
+  --toast-color: #22c55e;
+}
+
+.myToast.error {
+  --toast-color: #ef4444;
+}
+
+.myToast.warning {
+  --toast-color: #f59e0b;
+}
+
+.myToast.info {
+  --toast-color: #3b82f6;
+}
+
+/* ========================================
+   ICON
+======================================== */
+
+.toastIcon {
+  width: 38px;
+  height: 38px;
+
+  min-width: 38px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: var(--toast-color);
+
+  color: white;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.toastContent {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.toastContent h3 {
+  margin: 0 0 4px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #111;
+}
+
+.toastContent p {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+
+  color: #666;
+
+  word-break: break-word;
+}
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.toastClose {
+  width: 28px;
+  height: 28px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 5px;
+}
+
+.toastClose:hover {
+  background: #f1f1f1;
+
+  color: #111;
+}
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.toastProgress {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  height: 3px;
+
+  background: #eee;
+}
+
+.toastProgressBar {
+  width: 100%;
+
+  height: 100%;
+
+  background: var(--toast-color);
+
+  transform-origin: left;
+
+  animation-name: progress;
+
+  animation-timing-function: linear;
+
+  animation-fill-mode: forwards;
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* ========================================
+   ENTER ANIMATION
+======================================== */
+
+.toastEnter {
+  animation: toastEnter 0.3s ease forwards;
+}
+
+@keyframes toastEnter {
+  from {
+    opacity: 0;
+
+    transform: translateX(50px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* ========================================
+   EXIT ANIMATION
+======================================== */
+
+.toastExit {
+  animation: toastExit 0.3s ease forwards;
+}
+
+@keyframes toastExit {
+  from {
+    opacity: 1;
+
+    transform: translateX(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+
+    transform: translateX(50px) scale(0.95);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+  .toastContainer {
+    padding: 15px;
+  }
+
+  .myToast {
+    width: 100%;
+  }
+}

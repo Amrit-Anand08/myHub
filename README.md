@@ -35,5 +35,21 @@ Light/Dark theme switcher that remembers the user's choice after refresh.
 
 ---
 
+### 03 — Toast Notification
+
+Toast notifications built three ways: a custom toast component from scratch, plus `react-toastify` and `react-hot-toast`.
+
+- Custom toast with Success, Error, Warning, and Info types
+- Auto-dismiss with a progress bar and enter/exit animations
+- Manual close button
+- Library versions using `react-toastify` and `react-hot-toast` (loading and custom toasts)
+
+![Toast Notification](./images/03_ToastNotification.png)
+
+---
+
 More practical MERN features will be added here as I build them.
+
+```
+
 ```
